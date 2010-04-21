@@ -89,12 +89,12 @@ class tuningGrid(grid.Grid):
 
     def onKeyPress(self, event):
         '''
-        Bind key presses 'j' and 'k' to update cell value up/down
+        Bind key presses 'i' and 'k' to update cell value up/down
         '''
         keycode = event.GetKeyCode()
 
         # Check if this is a key we are handling
-        if keycode not in [74, 75]:
+        if keycode not in [73, 75]:
             event.Skip()
             return
 
@@ -109,7 +109,7 @@ class tuningGrid(grid.Grid):
         value = self.cells[rpm][load]
 
         # Update cell values
-        if keycode == 74:
+        if keycode == 73:
             value += 0xFF
         else:
             value -= 0xFF
@@ -231,7 +231,7 @@ class tuningGrid(grid.Grid):
             self.SetColLabelValue(i, '%.0f' % self.axis_rpm[i])
             self.SetColSize(i, 50)
             i += 1
-        
+
         i = 0
         while i < self.length_load:
             self.SetRowLabelValue(i, '%.0f' % self.axis_load[i])
